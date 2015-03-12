@@ -6,11 +6,14 @@ import java.util.Scanner;
 public class FonkDiziEleman {
 
     public static void main(String[] args) {
+         // kodumuzda kullanacağımız değişkenleri tanımladık.
         int dizi[], diziElamanSayisi, kacıncıEleman;
-
+        
+        // Dizimizi random oluşturabilmek ve dizinin eleman sayısını dışarıdan alabilmek için javanın random ve scanner sınıflarından nesne oluşturduk.
         Random rnd = new Random();
         Scanner scan = new Scanner(System.in);
-
+        
+         //Dizimizin eleman sayısını belirledik.
         System.out.println("Diziniz kaç elemanlı olsun?");
         diziElamanSayisi = scan.nextInt();
 
@@ -19,16 +22,19 @@ public class FonkDiziEleman {
 
         dizi = new int[diziElamanSayisi];
         System.out.println("Diziniz:");
-
+        
+        // Random dizimizi oluşturduk.
         for (int i = 0; i < diziElamanSayisi; i++) {
             dizi[i] = rnd.nextInt(101);
             System.out.print(dizi[i] + "-");
         }
         
+        // istenenEleman fonksiyonumuz çağırdık. 
         System.out.println(istenenEleman(dizi, kacıncıEleman));
 
     }
-
+    
+    // istenenEleman adında bir fonksiyon oluşturduk dizimiz sıraladık ve istenen elemanı bulduk.
     public static int istenenEleman(int[] dizi, int arananEleman) {
         int gecici;
         for (int i = 0; i <= dizi.length - 1; i++) {
